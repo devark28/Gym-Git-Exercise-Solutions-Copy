@@ -148,3 +148,37 @@
   git push
   # create a pull request on github
   ```
+
+## Bundle 4
+
+### Exercise 1
+
+```shell
+  git checkout main
+  # created a new repository on github (devark28/Gym-Git-Exercise-Solutions-Copy)
+  git remote add git-copy git@github.com:devark28/Gym-Git-Exercise-Solutions-Copy.git
+  # used vscode to edit home.html
+  git add -A
+  git commit -m 'Feat: added a new changes to home page'
+  git push origin
+  git push git-copy
+  ```
+
+### Exercise 2
+
+```shell
+  git checkout -b ft/footer
+  # used vscode to add footer to about pages
+  git add -A
+  git commit -m 'Feat: added footer to about pages'
+  # used vscode to add footer to services pages
+  git add -A
+  git commit -m 'Feat: added footer to services pages'
+  git push origin ft/footer
+  # created a pull request on github
+  git checkout main
+  git checkout -b ft/squashing
+  git merge --squash ft/footer
+  git commit -m 'footer changes squashing'
+  git push --set-upstream origin ft/squashing
+  ```

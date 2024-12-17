@@ -99,3 +99,52 @@
   git log
   git push
   ```
+
+## Bundle 3
+
+### Exercise 1
+
+```shell
+  git checkout main
+  git checkout -b ft/team-page
+  # used vscode to create all the files team.html
+  git add -A
+  git commit -m 'Feat: added services we offer'
+  git push --set-upstream origin ft/team-page
+  # create a pull request on github
+  git checkout main
+  git checkout -b ft/contact-page
+  git log ft/team-page # to get the last commit hash
+  git cherry-pick 2a0e79eb209611a9160661e57d750f5553e33ab6
+  # used vscode to edit contact.html
+  git add -A
+  git commit -m 'Feat: added contact page'
+  git push --set-upstream origin ft/contact-page
+  # create a pull request on github
+  git checkout -b ft/faq-page
+  # used vscode to create all the files faq.html
+  git add -A
+  git commit -m 'Feat: added faq page'
+  git push --set-upstream origin ft/faq-page
+  git revert 2a0e79eb209611a9160661e57d750f5553e33ab6
+  git push
+  ```
+
+### Exercise 2
+
+```shell
+  git checkout ft/faq-page
+  git checkout -b ft/home-page-redesign
+  git checkout main
+  # used vscode to edit home.html
+  git add -A
+  git commit -m 'Feat: redesigned home page'
+  git push
+  git checkout ft/home-page-redesign
+  git rebase main
+  # used vscode to edit home.html
+  git add -A
+  git commit -m 'Feat: redesigned home page'
+  git push
+  # create a pull request on github
+  ```

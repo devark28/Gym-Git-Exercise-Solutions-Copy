@@ -53,3 +53,49 @@
   git stash pop
   git reset --hard
   ```
+
+## Bundle 2
+
+### Exercise 1
+
+```shell
+  cd git_bundle_exercises
+  # used vscode to create all the files
+  git checkout -b ft/bundle-2
+  git status
+  git commit -m 'Feat: created services.html'
+  git branch # check current branch
+  git push --set-upstream origin ft/bundle-2
+  ```
+
+### Exercise 2
+
+```shell
+  cd git_bundle_exercises
+  git checkout main
+  git pull
+  git checkout -b ft/service-redesign
+  # used vscode to create all the files
+  git status
+  git add -A
+  git commit -m 'Feat: added services we offer'
+  git push --set-upstream origin ft/service-redesign
+  git checkout main
+  # used vscode to edit services.html same lines
+  git status
+  git add -A
+  git commit -m 'Feat: added services we offer'
+  git push
+  git checkout ft/service-redesign
+  git diff main
+  git merge main
+  # used vscode to edit services.html to resolve the conflict
+  git status
+  git add services.html 
+  git status
+  git commit -m 'Fix: resolve conflict merging from main'
+  git merge main
+  git status
+  git log
+  git push
+  ```
